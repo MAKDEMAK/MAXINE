@@ -1,0 +1,30 @@
+{"id":"F1-MEL-001","type":"evidence","front":"F1","subject":"melanopsin/ipRGC spatial vision","evidence_level":"A","tags":["melanopsin","ipRGC","contrast","retina","brightness","color"]}
+{"id":"F1-LSD-001","type":"evidence","front":"F1","subject":"LSD, 5-HT2A and visual perception","evidence_level":"B","tags":["5-HT2A","perception","saturation","contrast","psychophysics","serotonin"]}
+{"id":"F1-ETH-001","type":"evidence","front":"F1","subject":"ethambutol ocular toxicity","evidence_level":"B","tags":["ethambutol","ocular-toxicity","VEP","RNFL","GCIPL","optic-nerve"]}
+{"id":"F1-2PIR-001","type":"evidence","front":"F1","subject":"two-photon infrared perception","evidence_level":"A","tags":["two-photon","infrared","photopigment","nonlinear-optics","color"]}
+{"id":"F1-SPDA-001","type":"evidence","front":"F1","subject":"Substance P/dopamine retinal gain in zebrafish","evidence_level":"B","tags":["Substance-P","dopamine","retina","contrast","circadian","zebrafish"]}
+{"id":"F1-VSS-001","type":"evidence","front":"F1","subject":"visual snow and motion processing","evidence_level":"B","tags":["visual-snow","motion","aftereffect","psychophysics","7T","perception"]}
+{"id":"F2-ANA-001","type":"evidence","front":"F2","subject":"Anableps anableps","evidence_level":"A","tags":["split-retina","dual-medium","opsin","spatial-sampling","air-water"]}
+{"id":"F2-TRI-001","type":"evidence","front":"F2","subject":"Tripedalia cystophora box jellyfish","evidence_level":"A","tags":["multiocular","special-purpose-eyes","temporal","lens-eye","near-UV","distributed-vision"]}
+{"id":"F2-CHI-001","type":"evidence","front":"F2","subject":"Acanthopleura granulata chiton","evidence_level":"A","tags":["mineral-eye","chiton","aragonite","multiocular","air-water","low-resolution"]}
+{"id":"F2-HYB-001","type":"evidence","front":"F2","subject":"deep-sea fish hybrid photoreceptors","evidence_level":"A","tags":["hybrid-photoreceptor","rod-like-cone","mesopic","development","opsin","deep-sea"]}
+{"id":"F2-DIR-001","type":"evidence","front":"F2","subject":"Diretmus argenteus","evidence_level":"A","tags":["deep-sea","RH1","opsin","bioluminescence","spectral","rod"]}
+{"id":"F2-ADE-001","type":"evidence","front":"F2","subject":"Adelpha fessonia butterfly","evidence_level":"B","tags":["butterfly","trichromacy","signal","camouflage","color-model","receiver"]}
+{"id":"F2-CHR-001","type":"evidence","front":"F2","subject":"Ophiocoma wendtii brittle star","evidence_level":"B","tags":["extraocular","distributed","chromatophore","screening","spatial"]}
+{"id":"F2-RAD-001","type":"evidence","front":"F2","subject":"sabellid radiolar eyes","evidence_level":"B","tags":["compound","c-opsin","temporal","peripheral-eye","phototransduction"]}
+{"id":"F2-BODY-001","type":"evidence","front":"F2","subject":"Diadema africanum sea urchin","evidence_level":"B","tags":["extraocular","distributed","body-optics","screening","low-resolution"]}
+{"id":"F3-EVT-001","type":"evidence","front":"F3","subject":"event-based embedded eye tracking","evidence_level":"B","tags":["event-based","eye-tracking","DVS","neuromorphic","edge","low-latency","XR"]}
+{"id":"F3-XR-001","type":"evidence","front":"F3","subject":"multi-state geometric-phase varifocal optics","evidence_level":"B","tags":["XR","varifocal","polarization","wavefront","geometric-phase","VAC"]}
+{"id":"F3-AO-001","type":"evidence","front":"F3","subject":"adaptive optics full-field swept-source OCT","evidence_level":"C","tags":["OCT","adaptive-optics","DMD","structured-illumination","retinal","high-speed","computational-imaging"]}
+{"id":"F3-PWM-002","type":"evidence","front":"F3","subject":"OLED temporal modulation / stroboscopic visibility","evidence_level":"B","tags":["OLED","PWM","flicker","temporal","stroboscopic","display"]}
+{"id":"F3-WPT-001","type":"evidence","front":"F3","subject":"white-point adaptation and visual comfort","evidence_level":"B","tags":["white-point","adaptation","comfort","color","display","HCI"]}
+{"id":"F3-LF-002","type":"evidence","front":"F3","subject":"metalens light-field XR display","evidence_level":"B","tags":["light-field","XR","metalens","accommodation","eyebox","angular-sampling"]}
+{"id":"F3-AOOCT-003","type":"evidence","front":"F3","subject":"super-resolving adaptive-optics OCT","evidence_level":"B","tags":["retinal","AOOCT","adaptive-optics","PSF","MTF","superresolution","sampling"]}
+{"id":"F3-EVT-004","type":"evidence","front":"F3","subject":"spatiotemporally controlled illumination for event cameras","evidence_level":"B","tags":["event-based","neuromorphic","adaptive","sampling","bandwidth","spatiotemporal","active-perception"]}
+{"id":"F3-LCME-001","type":"evidence","front":"F3","subject":"liquid-crystal microlens event camera for HDR/static scenes","evidence_level":"B","tags":["event-based","HDR","microlens","PSF","active-perception","computational-optics","sensor-fusion"]}
+{"id":"module:adaptive-visual-sampling","type":"module","title":"Adaptive Visual Sampling","maturity":"M2","status":"active"}
+{"id":"module:multi-state-focus","type":"module","title":"Multi-State Focus","maturity":"M1","status":"active"}
+{"id":"module:retinal-measurement-stack","type":"module","title":"Retinal Measurement Stack","maturity":"M1","status":"active"}
+{"id":"waiting:subjective-objective-perception-gap","type":"concept","status":"waiting"}
+{"id":"waiting:nonlinear-infrared-perception","type":"concept","status":"waiting"}
+{"id":"waiting:distributed-body-optics","type":"concept","status":"waiting"}
