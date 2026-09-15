@@ -1,0 +1,69 @@
+module: adaptive-visual-sampling
+title: Adaptive Visual Sampling
+maturity: M2
+cohort: MAXINE
+
+principle:
+  statement: "Allocate a finite sensing budget non-uniformly according to spatial, temporal, spectral and adaptation-related information demand."
+  evidence:
+    biological:
+      - F1-MEL-001
+      - F1-SPDA-001
+      - F2-ANA-001
+      - F2-TRI-001
+      - F2-CHR-001
+      - F2-BODY-001
+    digital:
+      - F3-EVT-001
+      - F3-EVT-004
+      - F3-LCME-001
+
+model:
+  total_budget: B
+  allocation: "b_i = f(S_i, T_i, Lambda_i, A_i)"
+  constraints:
+    - "sum(b_i) <= B"
+    - "same total budget for adaptive and uniform control"
+  variables:
+    S_i: spatial_priority
+    T_i: temporal_change
+    Lambda_i: spectral_information
+    A_i: adaptation_state
+
+control:
+  strategy: uniform
+  allocation: "b_i = B / N"
+
+adaptive:
+  strategy: budget_constrained_weighting
+  optional_active_acquisition: true
+  note: "Active optical or illumination modulation may be added only after the software-only baseline is validated."
+
+inputs:
+  - synthetic_scene
+  - frame_video
+  - asynchronous_events
+
+outputs:
+  - retained_contrast_metric
+  - retained_motion_metric
+  - retained_spectral_information_metric
+  - processed_sample_count
+  - spatial_sampling_map
+
+success_criterion:
+  rule: "At equal B, improve at least one protected metric while keeping all other protected metrics within predefined tolerance relative to uniform sampling."
+  requires_baseline: true
+  requires_measurable_metrics: true
+
+next_action:
+  type: software_prototype
+  description: "Build a simulator with synthetic scenes and a uniform-control baseline. Do not add hardware until the allocation rule passes the M2 criterion."
+
+promotion_to_M3:
+  requires:
+    - working_software_artifact
+    - reproducible_test_scene
+    - uniform_baseline
+    - measurable_improvement_under_equal_budget
+    - documented_failure_cases
