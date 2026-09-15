@@ -6,36 +6,44 @@ active_modules:
   - id: adaptive-visual-sampling
     title: Adaptive Visual Sampling
     maturity: M2
-    confidence: 0.82
-    evidence: [F1-MEL-001, F2-ANA-001, F2-TRI-001, F3-EVT-001]
-    convergence: "Visual systems allocate sampling non-uniformly across space, time and signal relevance."
+    confidence: 0.90
+    evidence: [F1-MEL-001, F1-SPDA-001, F2-ANA-001, F2-TRI-001, F2-CHR-001, F2-BODY-001, F3-EVT-001, F3-EVT-004, F3-LCME-001]
+    convergence: "Visual systems and engineered sensors can allocate sensing capacity non-uniformly across space, time, spectrum and state, and can actively reshape acquisition to stay within a finite information budget."
     specification:
-      input: "asynchronous visual events or video stream"
-      sampling_map: "spatial + temporal adaptive weighting"
-      output: "importance-weighted visual field"
-    success_criterion: "Against uniform sampling at equal event/data budget, preserve or improve target contrast/motion detectability while reducing processed samples."
-    next_action: "Implement a safe software-only simulator comparing uniform versus adaptive spatial-temporal sampling on synthetic visual scenes."
+      input: "video, asynchronous visual events, or synthetic visual scene"
+      state_variables: [spatial_priority, temporal_change, spectral_information, adaptation_state]
+      active_acquisition: "optional optical/illumination modulation that redistributes event density before reconstruction"
+      sampling_map: "budget-constrained adaptive weighting across spatial, temporal and spectral dimensions"
+      output: "importance-weighted visual field plus retained-information metrics"
+    success_criterion: "At the same total data/event budget B, adaptive acquisition must improve at least one predefined contrast, motion, or spectral-information metric without degrading the remaining protected metrics beyond tolerance."
+    next_action: "Implement one software-only simulator comparing uniform sampling against adaptive budget allocation on synthetic scenes before adding any hardware-dependent mechanism."
 
   - id: multi-state-focus
     title: Multi-State Focus
     maturity: M1
-    confidence: 0.68
-    evidence: [F2-ANA-001, F3-XR-001]
-    convergence: "Biological partitioning of visual function across optical domains and engineered discrete focal-state switching both solve heterogeneous viewing conditions by partition rather than one universal optical state."
-    next_action: "Formalize the relationship as a state-selection model before any prototype; reject if it reduces to superficial analogy."
+    confidence: 0.71
+    evidence: [F2-ANA-001, F3-XR-001, F3-LF-002]
+    convergence: "Biological partitioning of visual function across optical domains and engineered focal/light-field state control both address heterogeneous viewing conditions by distributing optical function rather than relying on one universal state."
+    next_action: "Formalize the relationship as a state-selection or continuous light-field model; reject if the biological/digital link remains only descriptive."
 
   - id: retinal-measurement-stack
     title: Retinal Measurement Stack
     maturity: M1
-    confidence: 0.74
-    evidence: [F1-ETH-001, F3-AO-001]
-    convergence: "Subclinical visual change can appear in structural/electrophysiological measurements before conventional behavioral endpoints, while computational retinal imaging increases spatial/temporal observability."
+    confidence: 0.78
+    evidence: [F1-ETH-001, F3-AO-001, F3-AOOCT-003]
+    convergence: "Subclinical visual change can appear in structural/electrophysiological measurements before conventional behavioral endpoints, while computational retinal imaging can increase cellular-scale observability through acquisition design."
     next_action: "Define a non-clinical multimodal data model linking structural, electrophysiological and perceptual measurements without diagnostic claims."
 
 waiting:
   - id: subjective-objective-perception-gap
-    evidence: [F1-LSD-001]
-    reason: "Important dissociation between subjective visual change and measured contextual contrast, but currently lacks a defensible cross-front connection."
+    evidence: [F1-LSD-001, F1-VSS-001]
+    reason: "Evidence supports dissociation between subjective visual phenomena and some conventional psychophysical measurements, but no sufficiently strong cross-front architecture has yet emerged."
+  - id: nonlinear-infrared-perception
+    evidence: [F1-2PIR-001]
+    reason: "Strong and materializable nonlinear visual phenomenon, but it does not yet justify displacing an active module without a stronger cross-front convergence."
+  - id: distributed-body-optics
+    evidence: [F2-CHR-001, F2-BODY-001]
+    reason: "Strong evidence for spatial vision emerging from distributed receptors plus body-level optical screening; currently incorporated as supporting evidence for Adaptive Visual Sampling rather than promoted as a separate module."
 
 archived: []
 
@@ -46,4 +54,4 @@ rules:
   require_success_metric_from: M2
   require_real_artifact_from: M3
 
-last_synthesis: 2026-09-15
+last_synthesis: 2026-09-15T19:30:00-03:00
