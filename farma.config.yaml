@@ -1,6 +1,11 @@
 program: FARMAKSIA
 cohort: MAXINE
 
+github:
+  repository: MAKDEMAK/MAXINE
+  repository_id: 1372052672
+  branch: main
+
 research:
   fronts:
     - id: F1
