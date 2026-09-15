@@ -1,0 +1,16 @@
+program: FARMAKSIA
+cohort: MAXINE
+status: active
+
+active_modules: []
+waiting: []
+archived: []
+
+rules:
+  max_active_modules: 3
+  maturity_scale: [M0, M1, M2, M3, M4, M5]
+  require_traceability: true
+  require_success_metric_from: M2
+  require_real_artifact_from: M3
+
+last_synthesis: null
