@@ -1,0 +1,41 @@
+program: FARMAKSIA
+cohort: MAXINE
+
+research:
+  fronts:
+    - id: F1
+      name: pharmacology-vision
+    - id: F2
+      name: animal-vision
+    - id: F3
+      name: digital-vision
+  max_findings_per_cycle: 3
+  preserve_independent_exploration: true
+  prevent_feedback_bias: true
+  require_source_traceability: true
+
+synthesis:
+  layer: F4
+  max_active_modules: 3
+  allow_feedback_into_research_fronts: false
+  require_cross_domain_connection: true
+  require_explicit_relation_type: true
+
+maturity:
+  M0: signal
+  M1: supported_convergence
+  M2: functional_specification
+  M3: working_prototype
+  M4: measured_validation
+  M5: demonstrable_artifact
+
+promotion:
+  require_sources: true
+  require_traceability: true
+  require_success_metric_from: M2
+  require_real_artifact_from: M3
+  archive_if_no_path_to_prototype: true
+
+cohort_policy:
+  freeze_on_close: true
+  future_front_sets_use_new_repository: true
