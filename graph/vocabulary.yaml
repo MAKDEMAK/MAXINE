@@ -1,0 +1,24 @@
+relation_types:
+  - shares_mechanism_with
+  - analogous_morphology_to
+  - mathematically_equivalent_to
+  - measures
+  - modulates
+  - detects
+  - transforms
+  - constrains
+  - predicts
+  - contradicts
+  - supports
+  - inspired_by
+  - implemented_by
+  - visualizes
+  - validated_by
+
+rules:
+  no_relation_from_keyword_overlap_only: true
+  require_explicit_rationale: true
+  distinguish:
+    - evidence
+    - design_inference
+    - artistic_speculation
