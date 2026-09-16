@@ -1,0 +1,77 @@
+program: FARMAKSIA
+cohort: MAXINE
+system:
+  id: maxine-adaptive-observability
+  title: MAXINE Adaptive Observability System
+  maturity: M2
+  status: frozen_specification
+  thesis: "Useful visual systems need not maximize sensing uniformly: they can allocate a finite sensing budget according to spatial, temporal, spectral, adaptation and task demand, while preserving provenance between acquisition, restoration and measurement."
+
+pipeline:
+  - scene_or_signal
+  - adaptive_sensing_policy
+  - optional_acquisition_operator
+  - raw_observation
+  - optional_restoration
+  - feature_or_task_measurement
+  - retained_information_and_provenance_metrics
+
+components:
+  adaptive_visual_sampling:
+    module: adaptive-visual-sampling
+    maturity: M2
+    role: sensing_policy
+    spec: project/modules/adaptive-visual-sampling/spec.yaml
+    contract:
+      budget: B
+      baseline: uniform_sampling_at_equal_B
+      variables: [spatial_priority, temporal_change, spectral_information, adaptation_state, task_utility]
+      outputs: [sampling_map, retained_contrast, retained_motion, retained_spectral_information, retained_task_utility, processed_sample_count]
+    gate_to_M3: "A working reproducible software artifact must outperform the equal-budget uniform baseline on at least one protected metric without exceeding tolerances on the others."
+
+  retinal_measurement_stack:
+    module: retinal-measurement-stack
+    maturity: M2
+    role: measurement_integrity_and_observability
+    spec: project/modules/retinal-measurement-stack/spec.yaml
+    contract:
+      stages: [acquisition, raw_observation, optional_restoration, feature_measurement, cross_modal_record]
+      invariants:
+        - raw_and_restored_data_remain_separately_addressable
+        - every_transformation_preserves_provenance
+        - uncertainty_is_explicit
+        - cross_modal_alignment_does_not_imply_diagnosis_or_causality
+    gate_to_M3: "A small executable pipeline must ingest at least two modality classes, retain 100% traceability and pass predefined quality plus distortion gates."
+
+operators:
+  optical_state_selection:
+    source_module: multi-state-focus
+    disposition: merged_into_adaptive_visual_sampling
+    retained_evidence: [F2-ANA-001, F3-XR-001, F3-LF-002]
+    possible_state: "phi = focal/light-field acquisition state"
+    restriction: "Not enabled in the M2 baseline. It becomes testable only after passive adaptive allocation validates and only if it adds an independently measurable benefit under the same budget constraints."
+
+cross_cutting_findings:
+  subjective_objective_gap:
+    evidence: [F1-LSD-001, F1-VSS-001]
+    role: "validation caution: subjective visual change and objective measurements must remain distinct variables"
+    disposition: deferred_not_module
+  distributed_body_optics:
+    evidence: [F2-CHR-001, F2-BODY-001]
+    role: "supporting precedent for distributed sensing plus optical screening"
+    disposition: absorbed_into_adaptive_visual_sampling
+  nonlinear_infrared_perception:
+    evidence: [F1-2PIR-001]
+    role: isolated_strong_phenomenon
+    disposition: deferred_no_cross_front_architecture
+
+system_constraints:
+  - "No module is promoted by verbal similarity alone."
+  - "Evidence, design inference and artistic speculation remain separate classes."
+  - "No M3 claim exists without a working artifact."
+  - "No clinical diagnosis or treatment recommendation is produced."
+  - "Substance-related evidence remains descriptive/non-operational."
+
+closure:
+  frozen_on: 2026-09-16
+  next_cohort_policy: "Future research fronts must open a new cohort/repository rather than rewrite MAXINE."
