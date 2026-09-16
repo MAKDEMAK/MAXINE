@@ -1,0 +1,42 @@
+module:
+  id: retinal-measurement-stack
+  title: Retinal Measurement Stack
+  maturity: M2
+  purpose: "Non-clinical multimodal retinal observability model that separates acquisition, restoration and measurement while preserving provenance and uncertainty."
+
+evidence:
+  - id: F1-ETH-001
+    role: "demonstrates that structural/electrophysiological changes can precede conventional behavioral deficits"
+  - id: F3-AO-001
+    role: "high-speed adaptive-optics OCT acquisition"
+  - id: F3-AOOCT-003
+    role: "illumination/detection geometry improves lateral observability"
+  - id: F3-PDIV-006
+    role: "computational phase-diversity restoration estimates residual aberration without replacing core AO hardware"
+
+model:
+  pipeline: "acquisition -> raw observation -> optional computational restoration -> feature measurement -> cross-modal record"
+  modalities:
+    structural: [OCT, AOOCT, AOSLO]
+    electrophysiological: [VEP]
+    perceptual: [visual_acuity, contrast, color]
+  record_schema:
+    required: [subject_or_sample_id, modality, acquisition_timestamp, raw_measurement, processing_provenance, uncertainty]
+    optional: [restored_measurement, spatial_scale, temporal_scale, quality_metric, paired_measurement_id]
+  constraints:
+    - "raw and restored measurements must remain separately addressable"
+    - "every restoration step must preserve algorithm/procedure provenance"
+    - "cross-modal alignment must not imply diagnostic equivalence or causality"
+    - "no clinical diagnosis or treatment recommendation is produced"
+
+success_criterion:
+  primary: "On a fixed synthetic or public non-clinical retinal test set, the pipeline must ingest at least two modality classes and reproduce paired raw/restored measurements with complete provenance and no loss of raw data."
+  restoration_gate: "For phase-diversity or related restoration, at least one predefined image-quality or feature-separability metric must improve over the raw observation while an independent distortion metric remains within a declared tolerance."
+  traceability_gate: "100% of derived measurements must resolve to source acquisition, processing parameters and evidence IDs."
+
+m3_gate:
+  artifact: "small executable data pipeline plus synthetic/public example dataset"
+  blocked_until:
+    - "record schema validates"
+    - "raw/restored separation is enforced"
+    - "success metrics and distortion tolerance are fixed before evaluation"
