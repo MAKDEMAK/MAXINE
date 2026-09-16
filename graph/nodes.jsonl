@@ -14,6 +14,7 @@
 {"id":"F2-RAD-001","type":"evidence","front":"F2","subject":"sabellid radiolar eyes","evidence_level":"B","tags":["compound","c-opsin","temporal","peripheral-eye","phototransduction"]}
 {"id":"F2-BODY-001","type":"evidence","front":"F2","subject":"Diadema africanum sea urchin","evidence_level":"B","tags":["extraocular","distributed","body-optics","screening","low-resolution"]}
 {"id":"F2-STO-003","type":"evidence","front":"F2","subject":"stomatopod dynamic polarization vision","evidence_level":"A","tags":["compound","polarization","active-vision","eye-movement","stomatopod","temporal"]}
+{"id":"F2-ODO-004","type":"evidence","front":"F2","subject":"adult dragonfly regional compound-eye specialization","evidence_level":"B","tags":["compound-eye","fovea","regional-sampling","spatial","dragonfly","task-specialization"]}
 {"id":"F3-EVT-001","type":"evidence","front":"F3","subject":"event-based embedded eye tracking","evidence_level":"B","tags":["event-based","eye-tracking","DVS","neuromorphic","edge","low-latency","XR"]}
 {"id":"F3-XR-001","type":"evidence","front":"F3","subject":"multi-state geometric-phase varifocal optics","evidence_level":"B","tags":["XR","varifocal","polarization","wavefront","geometric-phase","VAC"]}
 {"id":"F3-AO-001","type":"evidence","front":"F3","subject":"adaptive optics full-field swept-source OCT","evidence_level":"C","tags":["OCT","adaptive-optics","DMD","structured-illumination","retinal","high-speed","computational-imaging"]}
