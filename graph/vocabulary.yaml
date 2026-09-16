@@ -1,5 +1,6 @@
 relation_types:
   - shares_mechanism_with
+  - shares_functional_problem_with
   - analogous_morphology_to
   - mathematically_equivalent_to
   - measures
@@ -14,6 +15,9 @@ relation_types:
   - implemented_by
   - visualizes
   - validated_by
+  - part_of
+  - merged_into
+  - absorbed_into
 
 rules:
   no_relation_from_keyword_overlap_only: true
@@ -22,3 +26,7 @@ rules:
     - evidence
     - design_inference
     - artistic_speculation
+  project_relations:
+    - part_of
+    - merged_into
+    - absorbed_into
