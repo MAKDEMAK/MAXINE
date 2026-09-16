@@ -29,11 +29,13 @@ active_modules:
 
   - id: retinal-measurement-stack
     title: Retinal Measurement Stack
-    maturity: M1
-    confidence: 0.78
-    evidence: [F1-ETH-001, F3-AO-001, F3-AOOCT-003]
-    convergence: "Subclinical visual change can appear in structural/electrophysiological measurements before conventional behavioral endpoints, while computational retinal imaging can increase cellular-scale observability through acquisition design."
-    next_action: "Define a non-clinical multimodal data model linking structural, electrophysiological and perceptual measurements without diagnostic claims."
+    maturity: M2
+    confidence: 0.84
+    evidence: [F1-ETH-001, F3-AO-001, F3-AOOCT-003, F3-PDIV-006]
+    convergence: "Subclinical visual change can appear in structural/electrophysiological measurements before conventional behavioral endpoints; retinal observability can be increased both at acquisition and computational-restoration stages, provided raw observations, transformations and uncertainty remain separable."
+    specification: "project/modules/retinal-measurement-stack/spec.yaml"
+    success_criterion: "Ingest at least two modality classes on a synthetic/public non-clinical test set; preserve 100% traceability from derived measurements to raw acquisition and processing parameters; any restoration must improve a predefined quality/separability metric without exceeding a fixed distortion tolerance."
+    next_action: "Validate the M2 record schema and fix the restoration quality metric plus independent distortion tolerance before implementing the M3 data pipeline."
 
 waiting:
   - id: subjective-objective-perception-gap
@@ -55,4 +57,4 @@ rules:
   require_success_metric_from: M2
   require_real_artifact_from: M3
 
-last_synthesis: 2026-09-15T21:52:00-03:00
+last_synthesis: 2026-09-15T22:52:00-03:00
