@@ -1,0 +1,22 @@
+id: multi-state-focus
+title: Multi-State Focus
+final_maturity: M1
+final_disposition: merged
+merged_into: adaptive-visual-sampling
+retained_as: optional_optical_state_operator
+closed_on: 2026-09-16
+
+evidence:
+  - F2-ANA-001
+  - F3-XR-001
+  - F3-LF-002
+
+rationale:
+  - "The engineered optical-state evidence is real, but the biological/digital connection remained too descriptive to justify a standalone module."
+  - "Focus/light-field state selection is functionally better treated as one optional acquisition operator inside Adaptive Visual Sampling."
+  - "The corrected F3-LF-002 operating ranges weakened the case for keeping a separate module rather than invalidating the underlying optical evidence."
+
+reopen_only_if:
+  - "a future cohort defines a success criterion distinct from Adaptive Visual Sampling"
+  - "the optical-state mechanism produces an independently measurable advantage"
+  - "the connection is supported by more than morphology or verbal analogy"
