@@ -24,9 +24,10 @@
 {"id":"F3-EVT-004","type":"evidence","front":"F3","subject":"spatiotemporally controlled illumination for event cameras","evidence_level":"B","tags":["event-based","neuromorphic","adaptive","sampling","bandwidth","spatiotemporal","active-perception"]}
 {"id":"F3-LCME-001","type":"evidence","front":"F3","subject":"liquid-crystal microlens event camera for HDR/static scenes","evidence_level":"B","tags":["event-based","HDR","microlens","PSF","active-perception","computational-optics","sensor-fusion"]}
 {"id":"F3-AST-005","type":"evidence","front":"F3","subject":"smart-glasses active orientation guidance for blind object reaching","evidence_level":"B","tags":["smart-glasses","low-vision","accessibility","open-vocabulary","spatial-guidance","HCI","computer-vision"]}
+{"id":"F3-PDIV-006","type":"evidence","front":"F3","subject":"phase-diversity computational correction in AOSLO","evidence_level":"B","tags":["retinal","adaptive-optics","AOSLO","phase-diversity","computational-imaging","inverse-problem","wavefront"]}
 {"id":"module:adaptive-visual-sampling","type":"module","title":"Adaptive Visual Sampling","maturity":"M2","status":"active"}
 {"id":"module:multi-state-focus","type":"module","title":"Multi-State Focus","maturity":"M1","status":"active"}
-{"id":"module:retinal-measurement-stack","type":"module","title":"Retinal Measurement Stack","maturity":"M1","status":"active"}
+{"id":"module:retinal-measurement-stack","type":"module","title":"Retinal Measurement Stack","maturity":"M2","status":"active"}
 {"id":"waiting:subjective-objective-perception-gap","type":"concept","status":"waiting"}
 {"id":"waiting:nonlinear-infrared-perception","type":"concept","status":"waiting"}
 {"id":"waiting:distributed-body-optics","type":"concept","status":"waiting"}
