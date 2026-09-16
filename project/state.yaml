@@ -57,4 +57,7 @@ rules:
   require_success_metric_from: M2
   require_real_artifact_from: M3
 
-last_synthesis: 2026-09-16T00:56:00-03:00
+graph_integrity:
+  F2-ODO-004_to_adaptive-visual-sampling: persisted
+
+last_synthesis: 2026-09-16T02:57:00-03:00
