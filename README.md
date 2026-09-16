@@ -1,25 +1,33 @@
 # MAXINE
 
-MAXINE es una cohorte de investigación y desarrollo dentro del programa FARMAKSIA.
+> **FROZEN COHORT — 2026-09-16**
 
-## Alcance de esta cohorte
+MAXINE es una cohorte cerrada de investigación y desarrollo dentro del programa FARMAKSIA. Sus cuatro automatizaciones fueron detenidas y el repositorio queda preservado como snapshot histórico: futuras combinaciones de frentes deben abrir una cohorte/repositorio nuevo.
 
-MAXINE trabaja con cuatro capas coordinadas:
+## Resultado final
 
-1. **Frente 1 — Farmacología, visión, color y neurociencia**
-2. **Frente 2 — Visión animal y percepción comparada**
-3. **Frente 3 — Visión digital, oftalmología tecnológica, hardware, software y matemáticas**
-4. **Capa 4 — Síntesis, arquitectura y desarrollo**
+MAXINE cierra en **M2** como un solo ecosistema: **MAXINE Adaptive Observability System**.
 
-Los tres primeros frentes investigan de forma independiente para reducir sesgo y deriva temática. La cuarta capa no dirige sus búsquedas: recibe evidencia, detecta convergencias defendibles y transforma esas convergencias en módulos construibles.
+La arquitectura final une dos componentes verificables:
 
-## Principio de trabajo
+1. **Adaptive Visual Sampling (M2)** — política de asignación de un presupuesto finito de sensado según prioridad espacial, cambio temporal, información espectral, estado de adaptación y utilidad de tarea.
+2. **Retinal Measurement Stack (M2)** — capa de adquisición/medición que mantiene separados datos crudos, restauración, mediciones derivadas, incertidumbre y procedencia.
 
-MAXINE no busca acumular informes. El flujo esperado es:
+`Multi-State Focus` (M1) fue fusionado dentro de Adaptive Visual Sampling como operador óptico opcional de estado focal/light-field; no se conserva como proyecto independiente.
 
-`evidencia -> relación -> especificación -> prototipo -> prueba -> pieza/producto`
+La especificación integradora está en `project/architecture.yaml` y la auditoría de cierre en `docs/closure.md`.
 
-Cada módulo avanza por niveles de madurez:
+## Evidencia
+
+La cohorte conserva **33 registros estructurados**:
+
+- F1 — farmacología / visión / neuro-oftalmología: **9**
+- F2 — visión animal comparada: **12**
+- F3 — visión digital / óptica computacional / imagen: **12**
+
+Cada registro completo vive en los ledgers de `evidence/`; `graph/nodes.jsonl` funciona como índice canónico y `graph/edges.jsonl` contiene únicamente relaciones explícitamente justificadas. Un nodo sin arista de diseño significa **no integrado**, no inválido.
+
+## Madurez
 
 - `M0` señal interesante
 - `M1` convergencia sustentada
@@ -28,19 +36,20 @@ Cada módulo avanza por niveles de madurez:
 - `M4` prueba / medición
 - `M5` pieza, obra o producto demostrable
 
-Máximo recomendado: **3 módulos activos simultáneamente**.
+MAXINE **no alcanzó M3**: no existe un artefacto ejecutable que haya pasado los criterios de validación definidos. El cierre no fabrica prototipos vacíos para elevar artificialmente la madurez.
 
-## Estructura
+## Estructura relevante
 
-- `evidence/` — paquetes de evidencia estructurados por frente
-- `graph/` — nodos, relaciones y vocabulario del grafo de conocimiento
-- `project/` — estado vivo de MAXINE y módulos activos
-- `prototypes/` — prototipos reales M3+
-- `artifacts/` — SVG, shaders, datos, imágenes y otros artefactos
-- `src/` — código reutilizable
-- `tests/` — pruebas
-- `docs/` — metodología y registro de decisiones
+- `evidence/` — registros científicos/técnicos normalizados por frente
+- `graph/` — nodos, relaciones y vocabulario
+- `project/state.yaml` — estado final congelado
+- `project/architecture.yaml` — arquitectura unificada
+- `project/modules/` — especificaciones M2 retenidas
+- `project/archive/` — módulos fusionados/archivados
+- `docs/methodology.md` — reglas metodológicas
+- `docs/decisions.md` — decisiones de diseño y cierre
+- `docs/closure.md` — auditoría final
 
-## Relación con FARMAKSIA
+## Principio FARMAKSIA preservado
 
-FARMAKSIA es el programa general. MAXINE es una cohorte temporal con un conjunto concreto de frentes. Cuando esta cohorte cierre, sus resultados quedan congelados y una cohorte futura puede abrirse en otro repositorio con otros frentes sin reescribir la historia de MAXINE.
+Los tres frentes investigaron independientemente para limitar bucles de sesgo. La síntesis conectó evidencia sólo cuando existía una relación defendible y distinguió evidencia, inferencia de diseño y especulación. MAXINE se congela sin reescribir esa historia.
