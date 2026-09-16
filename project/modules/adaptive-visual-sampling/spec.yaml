@@ -14,6 +14,7 @@ principle:
       - F2-CHR-001
       - F2-BODY-001
       - F2-STO-003
+      - F2-ODO-004
     digital:
       - F3-EVT-001
       - F3-EVT-004
