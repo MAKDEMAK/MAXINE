@@ -6,6 +6,13 @@ github:
   repository_id: 1372052672
   branch: main
 
+cohort_state:
+  status: frozen
+  closed_on: 2026-09-16
+  automations_enabled: false
+  final_architecture: project/architecture.yaml
+  closure_audit: docs/closure.md
+
 research:
   fronts:
     - id: F1
@@ -40,7 +47,9 @@ promotion:
   require_success_metric_from: M2
   require_real_artifact_from: M3
   archive_if_no_path_to_prototype: true
+  numeric_confidence_requires_calibration: true
 
 cohort_policy:
   freeze_on_close: true
   future_front_sets_use_new_repository: true
+  frozen_cohort_is_historical_snapshot: true
