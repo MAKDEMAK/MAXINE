@@ -4,7 +4,7 @@ maturity: M2
 cohort: MAXINE
 
 principle:
-  statement: "Allocate a finite sensing budget non-uniformly according to spatial, temporal, spectral and adaptation-related information demand."
+  statement: "Allocate a finite sensing budget non-uniformly according to spatial, temporal, spectral, adaptation and task-related information demand; when sensing geometry is controllable, orientation itself may be part of the allocation policy."
   evidence:
     biological:
       - F1-MEL-001
@@ -13,14 +13,16 @@ principle:
       - F2-TRI-001
       - F2-CHR-001
       - F2-BODY-001
+      - F2-STO-003
     digital:
       - F3-EVT-001
       - F3-EVT-004
       - F3-LCME-001
+      - F3-AST-005
 
 model:
   total_budget: B
-  allocation: "b_i = f(S_i, T_i, Lambda_i, A_i)"
+  allocation: "b_i = f(S_i, T_i, Lambda_i, A_i, U_i)"
   constraints:
     - "sum(b_i) <= B"
     - "same total budget for adaptive and uniform control"
@@ -29,6 +31,11 @@ model:
     T_i: temporal_change
     Lambda_i: spectral_information
     A_i: adaptation_state
+    U_i: task_utility
+  optional_orientation_state:
+    symbol: theta
+    rule: "theta_next = argmax_theta expected_task_information(theta)"
+    scope: "disabled in the initial software baseline; enabled only after passive budget allocation passes validation"
 
 control:
   strategy: uniform
@@ -37,7 +44,7 @@ control:
 adaptive:
   strategy: budget_constrained_weighting
   optional_active_acquisition: true
-  note: "Active optical or illumination modulation may be added only after the software-only baseline is validated."
+  note: "Active optical, illumination or sensing-orientation control may be added only after the software-only passive baseline is validated."
 
 inputs:
   - synthetic_scene
@@ -48,6 +55,7 @@ outputs:
   - retained_contrast_metric
   - retained_motion_metric
   - retained_spectral_information_metric
+  - retained_task_utility_metric
   - processed_sample_count
   - spatial_sampling_map
 
@@ -58,7 +66,7 @@ success_criterion:
 
 next_action:
   type: software_prototype
-  description: "Build a simulator with synthetic scenes and a uniform-control baseline. Do not add hardware until the allocation rule passes the M2 criterion."
+  description: "Build the existing simulator with synthetic scenes and a uniform-control baseline, now logging task utility U_i as an additional protected metric. Keep orientation control theta disabled until passive allocation passes the M2 criterion."
 
 promotion_to_M3:
   requires:
