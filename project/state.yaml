@@ -6,9 +6,9 @@ active_modules:
   - id: adaptive-visual-sampling
     title: Adaptive Visual Sampling
     maturity: M2
-    confidence: 0.92
-    evidence: [F1-MEL-001, F1-SPDA-001, F2-ANA-001, F2-TRI-001, F2-CHR-001, F2-BODY-001, F2-STO-003, F3-EVT-001, F3-EVT-004, F3-LCME-001, F3-AST-005]
-    convergence: "Visual systems and engineered sensors can allocate sensing capacity non-uniformly across space, time, spectrum and state, and can actively reshape acquisition or sensing orientation according to task-relevant information under a finite budget."
+    confidence: 0.94
+    evidence: [F1-MEL-001, F1-SPDA-001, F2-ANA-001, F2-TRI-001, F2-CHR-001, F2-BODY-001, F2-STO-003, F2-ODO-004, F3-EVT-001, F3-EVT-004, F3-LCME-001, F3-AST-005]
+    convergence: "Visual systems and engineered sensors can allocate sensing capacity non-uniformly across space, time, spectrum and state, and can actively reshape acquisition or sensing orientation according to task-relevant information under a finite budget. Dragonfly regional compound-eye specialization independently strengthens the spatial-allocation component: sensor area and resolution are concentrated into behaviorally relevant foveae/bands rather than distributed uniformly."
     specification:
       input: "video, asynchronous visual events, or synthetic visual scene"
       state_variables: [spatial_priority, temporal_change, spectral_information, adaptation_state, task_utility]
@@ -16,7 +16,7 @@ active_modules:
       sampling_map: "budget-constrained adaptive weighting across spatial, temporal, spectral and task-utility dimensions"
       output: "importance-weighted visual field plus retained-information and task-utility metrics"
     success_criterion: "At the same total data/event budget B, adaptive acquisition must improve at least one predefined protected metric without degrading the remaining protected metrics beyond tolerance."
-    next_action: "Implement the existing software-only simulator comparing uniform sampling against passive adaptive budget allocation on synthetic scenes, now logging task utility U_i; do not enable orientation control until this baseline passes."
+    next_action: "Implement the existing software-only simulator comparing uniform sampling against passive adaptive budget allocation on synthetic scenes, logging task utility U_i; do not enable orientation control until this baseline passes."
 
   - id: multi-state-focus
     title: Multi-State Focus
@@ -57,4 +57,4 @@ rules:
   require_success_metric_from: M2
   require_real_artifact_from: M3
 
-last_synthesis: 2026-09-15T22:52:00-03:00
+last_synthesis: 2026-09-16T00:56:00-03:00
